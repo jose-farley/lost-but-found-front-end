@@ -1,9 +1,12 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import wellcomeImage from '../../assets/wellcome.png'
 import * as zod from 'zod'
 import { ContainerContentLogin, ContainerLogin, ErrorMessage, FormLogin, Subtitle } from "./style"
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useContext } from "react"; 
+import { AuthContext } from "../../context/authentication";
+
 
 
 const newLoginSchema = zod.object({
@@ -14,14 +17,19 @@ const newLoginSchema = zod.object({
 
 type FormProps = zod.infer<typeof newLoginSchema>
 
-export function LoginScreen(){
 
+
+
+export function LoginScreen(){
+    const {logar} = useContext(AuthContext)
+    const navigate = useNavigate()
     const {register, handleSubmit, formState} = useForm<FormProps>({
         resolver:zodResolver(newLoginSchema)
     })
 
-    function handleLogin(){
-
+    async function handleLogin(data:FormProps){
+        logar(data)
+        navigate("/inicio")
     }
     return (
         <ContainerLogin>
