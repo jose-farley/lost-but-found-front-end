@@ -29,7 +29,6 @@ export function LoginScreen(){
 
     async function handleLogin(data:FormProps){
         logar(data)
-        navigate("/inicio")
     }
     return (
         <ContainerLogin>

@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     body, textarea, input, button{
         font-family: 'Roboto', sans-serif;
         font-size: 1rem;
+        overflow-y: hidden;
     }
 
 `

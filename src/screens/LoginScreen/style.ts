@@ -6,7 +6,7 @@ export const ContainerLogin = styled.div`
     
     display:flex;
     flex-direction: row;
-    margin-top: 15rem;
+    margin-top: 5rem;
     justify-content: space-between;
     align-items: center;
     width: 60rem;

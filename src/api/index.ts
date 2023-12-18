@@ -2,6 +2,6 @@ import axios from 'axios'
 
 
 const api = axios.create({
-    baseURL:"https://easy-finder.onrender.com/"
+    baseURL:"http://localhost:3030/"
 })
 export {api}
